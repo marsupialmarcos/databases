@@ -1,7 +1,7 @@
 # databases
 This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
 
-# Databases
+# Sprint: Databases
 
 # Bare Minimum Requirements
 
@@ -58,13 +58,19 @@ Now you'll begin actual work on the codebase in this repo. Start by familiarizin
 * spec/server-spec.js contains a mocha spec for testing your Node server's ability to read and write the database. This spec is not complete! It contains several lines commented with "TODO". You'll be customizing those lines to match the details of the database tables you create
 
 **client**
+
 * An empty directory for you to put your client side code in. Either use your own chatterbox-client implementation, or, if there is something irreparably wrong with your code, use the Hack Reactor-provided solution code
+
 **orm-resources**
+
 * orm-example.js contains EXAMPLE CODE for you to reference later in the sprint when you start refactoring your Node server to use the Sequelize ORM to read and write data to the MySQL. You'll be learning how ORMs allow you to read and write to the database in more JavaScript-like syntax instead of in raw SQL strings
+
 **server-pure-sql**
+
 * When you begin the part of this sprint where you refactor to use an ORM, you will copy all of the code you have in the server directory into the server-pure-sql directory. This way you will be able to easily present your work on both versions without navigating your repo's commit history
 
 **Create MySQL Persistent Storage for Chatterbox App**
+
 * Design a multi-table schema to hold data for your chatterbox-server
 Start by using WWW SQL Designer to visually design your multi-table schema
 Edit the file server/schema.sql to define, in SQL, the tables you have visually designed. Load the schema into your MySQL server with mysql -u root < path/to/schema.sql.
@@ -73,7 +79,7 @@ Open the mysql interactive prompt and use the SHOW TABLES and DESCRIBE <table-na
 * Take a look at the tests in server/spec/server-spec.js. Before you start hacking on your persistent server, read the tests and try to understand what they're trying to do
   * **NOTE:** The tests depend on the details of the schema you created, so you will need to customize the spec file with some of these details before it will run. Look for 'TODO' statements in the spec and make sure to address them all
 * Put all the pieces together to create a persistent SQL-backed chatterbox-server! Use server/app.js as the entrypoint into your application. You will have to build out the methods in server/models/index.js and server/controllers/index.js. Feel free to use or get inspiration from any of your previously written chatterbox-server code, though be aware that you may not be able to swap, without modification, your bare node code into this Express application. Sometimes code reuse accross applications works like a charm and sometimes it is quite messy. Observe what works and what doesn't throughout the process of building out this app, using what you can from existing code, and make note afterwords where you were the most efficient
-  * Note: Depending on the code you reuse from your earlier work, you may need to remove the in-memory messages array that used to store your data as part of the node process. Every new message must now result in a write to the database, and every request for data should result in a read. You should no longer need to cache any of that data in memory as part of the application
+  * **Note:** Depending on the code you reuse from your earlier work, you may need to remove the in-memory messages array that used to store your data as part of the node process. Every new message must now result in a write to the database, and every request for data should result in a read. You should no longer need to cache any of that data in memory as part of the application
 * Have your web server connect to the MySQL database, and use the database connection to store data as messages come in
 * After storing some new messages, open up the mysql command line prompt, use and query your database to look at the new messages
 * Manually test your server's persistence by sending some chat messages to your server and then stopping the running Node server. Start your Node server up again, connect to it with the client, and see whether the messages you sent last time are still there!
@@ -81,17 +87,20 @@ Open the mysql interactive prompt and use the SHOW TABLES and DESCRIBE <table-na
 * Write more unit tests to provide better test coverage of your application. How does it feel, given the time constraints, to be asked to figure out what kinds of tests to write in addition to the ones you already have? Your current predicament represents a very common engineer experience
 
 **Refactor with Sequelize ORM**
+
 An ORM (Object-Relational Mapping) is usually a library that does the work of converting between objects in your code and rows in a database, so you don't have to fill your code with boilerplate SQL statements or raw SQL strings.
 
 * Read the Sequelize docs and the example code in orm-resources/orm-example.js to understand how the ORM works
 * Refactor your existing server code to use Sequelize
 * Make sure your persistent chatterbox-server still passes all the tests it passed before. Since you haven't modified your server's HTTP interface or the database schema (right?), the old unit tests should still work without modification
   * Note that this is one of the biggest wins earned from writing good tests: they let you refactor and rewrite your code with confidence, since they'll tell you if you broke anything that used to work
+
 **Tests**
+
 * Add at least 2 additional tests inside server/spec/server-spec.js that will better assure future users that your application is behaving as expected.
 
 
-# ADVANCED CONTENT
+# Advanced Content
 Our advanced content is intended to throw you in over your head, requiring you to solve problems with very little support or oversight, much like you would as a mid or senior level engineer.
 
 * Make sure you have a users table in your database. Make up some settings that a user can change, such as text color, font, witty sign-off message, etc. Store these settings in the users table, and when the user returns to using the chatterbox app, make sure to recognize them and apply their persisted settings
