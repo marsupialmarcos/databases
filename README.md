@@ -114,7 +114,7 @@ Our advanced content is intended to throw you in over your head, requiring you t
 * Ensure that your migration to MongoDB didn't break any of your functionality: copy over the test specs from your original project and modify them so they still work with your new version!
 * Start using your MongoDB-backed project and get some real data into your Mongo database.
 
-**Relevant SQL Documentation**
+###### Relevant SQL Documentation
 
 * [MySQL CREATE TABLE reference docs](https://dev.mysql.com/doc/refman/8.0/en/create-table.html)
 * [MySQL SELECT reference docs](https://dev.mysql.com/doc/refman/8.0/en/select.html)
@@ -125,7 +125,7 @@ Our advanced content is intended to throw you in over your head, requiring you t
 * [SQLfiddle](http://sqlfiddle.com/)
 * [MySQL Workbench - robust MySQL design tool](https://dev.mysql.com/downloads/workbench/)
 
-**Relevant ORM Documentation**
+###### Relevant ORM Documentation
 
 * [Sequelize ORM for Node](http://docs.sequelizejs.com/)
 * [Object Relational Mapping - Wikipedia](https://en.wikipedia.org/wiki/Object-relational_mapping)
