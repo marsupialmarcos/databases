@@ -43,7 +43,7 @@ It's incredibly common to visually design schemas. Doing so allows you to archit
 * Create a schema with 2 new tables. Each table needs a primary key defined on one of its columns. One of the tables should have a foreign key defined on one if its columns that will relate it to the other table
 * Take a screenshot of the schema you designed and be prepared to talk about it with another engineer
 
-# In this repo
+# In This Repo:
 
 Now you'll begin actual work on the codebase in this repo. Start by familiarizing yourself with the directories contained in this repo.
 
